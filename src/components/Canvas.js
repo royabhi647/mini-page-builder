@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Modal from './Modal';
 
 const Canvas = ({ elements, setElements }) => {
@@ -76,18 +76,18 @@ const Canvas = ({ elements, setElements }) => {
       setDraggedElement(null);
    };
 
+   const handleKeyDown = useCallback((e) => {
+      if (e.key === 'Delete') {
+        handleDelete();
+      }
+    }, [handleDelete]);
+
    useEffect(() => {
-      const handleKeyDown = (e) => {
-        if (e.key === 'Delete') {
-          handleDelete();
-        }
-      };
-    
       window.addEventListener('keydown', handleKeyDown);
       return () => {
-        window.removeEventListener('keydown', handleKeyDown);
+         window.removeEventListener('keydown', handleKeyDown);
       };
-    }, [handleDelete]);
+   }, [handleKeyDown]);
 
    return (
       <div
