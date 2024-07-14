@@ -76,18 +76,18 @@ const Canvas = ({ elements, setElements }) => {
       setDraggedElement(null);
    };
 
-   const handleKeyDown = (e) => {
-      if (e.key === 'Delete') {
-         handleDelete();
-      } 
-   };
-
    useEffect(() => {
+      const handleKeyDown = (e) => {
+        if (e.key === 'Delete') {
+          handleDelete();
+        }
+      };
+    
       window.addEventListener('keydown', handleKeyDown);
       return () => {
-         window.removeEventListener('keydown', handleKeyDown);
+        window.removeEventListener('keydown', handleKeyDown);
       };
-   }, [selectedElement, elements, handleKeyDown]);
+    }, [handleDelete]);
 
    return (
       <div
