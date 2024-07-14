@@ -87,7 +87,7 @@ const Canvas = ({ elements, setElements }) => {
       return () => {
          window.removeEventListener('keydown', handleKeyDown);
       };
-   }, [selectedElement, elements]);
+   }, [selectedElement, elements, handleKeyDown]);
 
    return (
       <div
