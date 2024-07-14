@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import Sidebar from './components/Sidebar';
+import Canvas from './components/Canvas';
 import './App.css';
 
 function App() {
+  const [elements, setElements] = useState(() => {
+    const savedElements = localStorage.getItem('elements');
+    return savedElements ? JSON.parse(savedElements) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('elements', JSON.stringify(elements));
+  }, [elements]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar setElements={setElements} />
+      <Canvas elements={elements} setElements={setElements} />
     </div>
   );
 }
