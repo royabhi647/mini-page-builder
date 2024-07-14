@@ -39,13 +39,13 @@ const Canvas = ({ elements, setElements }) => {
       setSelectedElement(index);
    };
 
-   const handleDelete = () => {
+   const handleDelete = useCallback(() => {
       if (selectedElement !== null) {
-         const newElements = elements.filter((_, index) => index !== selectedElement);
-         setElements(newElements);
-         setSelectedElement(null);
+        const newElements = elements.filter((_, index) => index !== selectedElement);
+        setElements(newElements);
+        setSelectedElement(null);
       }
-   };
+    }, [selectedElement, elements, setElements, setSelectedElement]);
 
    const handleExport = () => {
       const dataStr = JSON.stringify(elements, null, 2);
