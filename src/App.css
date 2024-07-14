@@ -123,3 +123,57 @@ form{
   border: none;
   cursor: pointer;
 }
+
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 150px;
+  }
+
+  .modal-content {
+    width: 50%;
+  }
+
+  .Canvas {
+    height: 100vh;
+  }
+
+  .canvas-element {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Sidebar {
+    display: 100px; 
+  }
+
+  .App {
+    display: flex;
+  }
+
+  .Canvas {
+    width: 100%;
+  }
+
+  .delete-button {
+    position: fixed;
+    top: 1;
+    right: 0;
+    width: 50px;
+  }
+
+  .export-button {
+    position: fixed;
+    right: 0;
+    top: 1;
+    width: 50px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-content {
+    width: 50%; 
+  }
+}
