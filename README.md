@@ -34,7 +34,7 @@ Mini Page Builder is a React-based application that allows users to build custom
 3. Start the development server:
    <pre>npm start</pre>
 
-## Table Screenshots
+## Assignment Screenshots
 
 ![almabase1](https://github.com/user-attachments/assets/83381cfb-601c-4c62-9e0a-cc1b397857ce)
 ![almabase2](https://github.com/user-attachments/assets/c2969ee8-1b66-46f1-a525-58a0ff38f397)
