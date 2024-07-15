@@ -2,6 +2,8 @@
 
 Mini Page Builder is a React-based application that allows users to build custom web pages using a drag-and-drop interface. This project focuses on usability and flexibility, enabling users to place and configure UI elements like labels, inputs, and buttons on a canvas effortlessly.
 
+### [live preview](https://abhii-mini-page-builder.netlify.app/)
+
 ## Features
 
 - **Drag and Drop Interface**: Easily drag elements from a sidebar onto a blank canvas.
